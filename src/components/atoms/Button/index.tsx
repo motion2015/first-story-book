@@ -7,6 +7,7 @@ interface ButtonProps {
   primary?: boolean;
   /** 배경색 (커스텀) */
   backgroundColor?: string;
+  color?: string;
   /** 버튼 크기 */
   size?: "small" | "medium" | "large";
   /** 클릭 이벤트 */
@@ -42,9 +43,10 @@ const StyledButton = styled.button<{
         : "14px"};
 
   /* 색상 설정 */
-  color: ${(props) => (props.$primary ? "white" : "#333")};
+  color: ${(props) =>
+    props.$primary ? props.color || "#fff" : props.color || "#000"};
   background-color: ${(props) =>
-    props.$backgroundColor || (props.$primary ? "#646cff" : "#f0f0f0")};
+    props.$backgroundColor || (props.$primary ? "#646cff" : "#000000")};
 
   &:hover {
     filter: brightness(0.9);
@@ -59,6 +61,7 @@ export const Button = ({
   primary = false,
   size = "medium",
   backgroundColor,
+  color = "#ff5722",
   onClick,
 }: ButtonProps) => {
   return (
@@ -67,6 +70,7 @@ export const Button = ({
       $primary={primary}
       $size={size}
       $backgroundColor={backgroundColor}
+      color={color}
       onClick={onClick}
     >
       {label}

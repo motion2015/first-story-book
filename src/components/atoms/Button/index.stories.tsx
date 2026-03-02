@@ -3,7 +3,7 @@ import { fn } from "storybook/test";
 import { Button } from ".";
 
 const meta = {
-  title: "Components/Button",
+  title: "Atoms/Button",
   component: Button,
   parameters: {
     layout: "centered",
@@ -14,6 +14,7 @@ const meta = {
     size: {
       control: { type: "select", options: ["small", "medium", "large"] },
     },
+    color: { control: "color" },
   },
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -24,13 +25,15 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: "Primary Button",
+    label: "추가",
+    //color: "#304ffe",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: "Secondary Button",
+    label: "삭제",
+    backgroundColor: "#606060",
   },
 };
 
