@@ -9,5 +9,5 @@ interface Props {
 }
 
 export const PageTitle = ({ title }: Props) => {
-  return <Container>{title}</Container>;
+  return <Container className="title">{title}</Container>;
 };

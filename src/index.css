@@ -21,6 +21,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* src/index.css */
+
+:root {
+  --text-color: #333333; /* 라이트 모드 글자색 */
+  --bg-color: #ffffff;
+}
+
+/* 스토리북이나 브라우저가 다크모드일 때 */
+[data-theme="dark"],
+.dark {
+  --text-color: #ffffff; /* 다크 모드 글자색 */
+  --bg-color: #1a1a1a;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
 h1,
 p,
 label {
@@ -219,8 +238,8 @@ textarea {
 @font-face {
   font-family: "percolate";
   src: url("./assets/icon/percolate.eot?-5w3um4");
-  src: url("./assets/icon/percolate.eot?#iefix5w3um4")
-      format("embedded-opentype"),
+  src:
+    url("./assets/icon/percolate.eot?#iefix5w3um4") format("embedded-opentype"),
     url("./assets/icon/percolate.woff?5w3um4") format("woff"),
     url("./assets/icon/percolate.ttf?5w3um4") format("truetype"),
     url("./assets/icon/percolate.svg?5w3um4") format("svg");

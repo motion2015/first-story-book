@@ -12,13 +12,13 @@ const meta = {
       values: [{ name: "blue", value: "#ef09c1" }],
     },
   },
-  decorators: [
-    (Story) => (
-      <BrowserRouter>
-        <Story />
-      </BrowserRouter>
-    ),
-  ],
+  // decorators: [
+  //   (Story) => (
+  //     <BrowserRouter>
+  //       <Story />
+  //     </BrowserRouter>
+  //   ),
+  // ],
 } satisfies Meta<typeof AppTitle>;
 
 export default meta;

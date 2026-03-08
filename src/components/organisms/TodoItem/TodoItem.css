@@ -1,0 +1,8 @@
+.todo-item {
+  color: var(--text-color);
+  /* padding: 1rem; */
+}
+
+.dark .todo-item {
+  color: #333;
+}
