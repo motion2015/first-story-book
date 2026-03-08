@@ -1,31 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { ToDoListContextProvider } from "../../contexts/ToDoList";
 import { ToDoListPage } from ".";
 
 const meta = {
   title: "Pages/ToDoListPage",
   component: ToDoListPage,
   tags: ["autodocs"],
+  // 전역(preview.ts)에서 Provider를 설정했으므로 여기서 decorators는 삭제합니다.
   argTypes: {
-    //label: { control: "text" },
-    //onDelete: { action: "삭제 버튼 클릭됨" },
+    // 필요한 경우 추가 설정
   },
-  decorators: [
-    (Story) => (
-      <ToDoListContextProvider
-        initialValue={["리액트 공부하기", "운동하기", "책 읽기"]}
-      >
-        <Story />
-      </ToDoListContextProvider>
-    ),
-  ],
 } satisfies Meta<typeof ToDoListPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  //args: {
-  //    label: "리액트 공부하기"
-  //},
-};
+// 이제 Default 스토리는 preview.ts에 설정된 Context 데이터를 자동으로 가져옵니다.
+export const Default: Story = {};

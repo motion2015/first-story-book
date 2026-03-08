@@ -1,6 +1,7 @@
 import React from "react";
 import type { Preview, StoryContext } from "@storybook/react-vite";
 import { BrowserRouter } from "react-router-dom";
+import { ToDoListContextProvider } from "../src/contexts/ToDoList";
 import "../src/index.css";
 
 const withTheme = (Story: () => React.ReactNode, context: StoryContext) => {
@@ -24,7 +25,12 @@ const withTheme = (Story: () => React.ReactNode, context: StoryContext) => {
         width: "100%",
       },
     },
-    React.createElement(BrowserRouter, null, React.createElement(Story)),
+    // 2. ContextProvider로 Story를 감쌉니다.
+    React.createElement(
+      ToDoListContextProvider,
+      null,
+      React.createElement(BrowserRouter, null, React.createElement(Story)),
+    ),
   );
 };
 
