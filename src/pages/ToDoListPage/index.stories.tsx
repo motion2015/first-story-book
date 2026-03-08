@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-
+import { ToDoListContextProvider } from "../../contexts/ToDoList";
 import { ToDoListPage } from ".";
 
 const meta = {
@@ -10,6 +10,13 @@ const meta = {
     //label: { control: "text" },
     //onDelete: { action: "삭제 버튼 클릭됨" },
   },
+  decorators: [
+    (Story) => (
+      <ToDoListContextProvider>
+        <Story />
+      </ToDoListContextProvider>
+    ),
+  ],
 } satisfies Meta<typeof ToDoListPage>;
 
 export default meta;
