@@ -18,17 +18,16 @@ interface Props {
 }
 
 const ToDoListContextProvider = ({ children, initialValue }: Props) => {
-  const [toDoList, setToDoList] = useState<string[]>(initialValue || [
-    "리액트 공부하기",
-    "운동하기",
-    "책 읽기",
-  ]);
+  const [toDoList, setToDoList] = useState<string[]>(
+    initialValue || ["리액트 공부하기", "운동하기", "책 읽기"],
+  );
   const onAdd = (toDo: string) => {
     setToDoList([...toDoList, toDo]);
   };
   const onDelete = (toDo: string) => {
     setToDoList(toDoList.filter((item) => item !== toDo));
   };
+  console.log(toDoList);
   return (
     <ToDoListContext.Provider value={{ toDoList, onAdd, onDelete }}>
       {children}

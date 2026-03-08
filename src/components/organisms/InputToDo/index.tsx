@@ -1,8 +1,9 @@
 import { styled } from "storybook/theming";
 import { Button } from "../../atoms/Button";
 import { Input } from "../../atoms/Input";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToDoListContext } from "../../../contexts/ToDoList";
 
 const Container = styled.div`
   display: flex;
@@ -11,9 +12,11 @@ const Container = styled.div`
 `;
 export const InputToDo = () => {
   const [toDo, setToDo] = useState("");
+  const { onAdd } = useContext(ToDoListContext);
   const navigate = useNavigate();
-  const onAdd = () => {
-    alert(`할 일 추가: ${toDo}`);
+  const onAddTodo = () => {
+    if (toDo.trim() === "") return; // 빈 문자열인 경우 추가하지 않음
+    onAdd(toDo);
     setToDo("");
     navigate("/"); // 추가 후 홈으로 이동
   };
@@ -24,7 +27,7 @@ export const InputToDo = () => {
   return (
     <Container>
       <Input value={toDo} onChange={handleChange} />
-      <Button label="추가" color="#304ffe" onClick={onAdd} />
+      <Button label="추가" color="#304ffe" onClick={onAddTodo} />
     </Container>
   );
 };
