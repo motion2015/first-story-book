@@ -12,7 +12,9 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <ToDoListContextProvider>
+      <ToDoListContextProvider
+        initialValue={["리액트 공부하기", "운동하기", "책 읽기"]}
+      >
         <Story />
       </ToDoListContextProvider>
     ),

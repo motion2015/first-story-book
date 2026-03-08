@@ -14,10 +14,11 @@ const ToDoListContext = createContext<Context>({
 
 interface Props {
   children: JSX.Element | JSX.Element[];
+  initialValue?: string[];
 }
 
-const ToDoListContextProvider = ({ children }: Props) => {
-  const [toDoList, setToDoList] = useState<string[]>([
+const ToDoListContextProvider = ({ children, initialValue }: Props) => {
+  const [toDoList, setToDoList] = useState<string[]>(initialValue || [
     "리액트 공부하기",
     "운동하기",
     "책 읽기",
