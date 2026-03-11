@@ -477,3 +477,16 @@ textarea {
   vertical-align: top;
   max-width: 100%;
 }
+
+:root {
+    --btn-bg-color: #0d0c22;
+    --btn-bg-color-hover: #3d3d4e;
+    --btn-text-color: #fff;
+    --btn-text-color-hover: #fff;
+    --btn-border-color: var(--btn-bg-color);
+    --btn-border-color-hover: var(--btn-bg-color-hover);
+    --btn-height: 40px;
+    --btn-padding: 20px;
+    --btn-font-size: 13px;
+    --btn-icon-size: 16px;
+}

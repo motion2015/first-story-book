@@ -4,6 +4,7 @@ import { Label } from ".";
 const meta = {
   title: "Atoms/Label",
   component: Label,
+  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     backgrounds: {
@@ -11,6 +12,7 @@ const meta = {
       values: [{ name: "blue", value: "#ef09c1" }],
     },
   },
+
   decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Label>;
 
@@ -18,7 +20,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-    label: "기본 라벨",
+  args: {
+    label: "블로그 제목",
   },
 };

@@ -9,7 +9,10 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-docs",
     "@storybook/addon-vitest",
-    "@chromatic-com/storybook"
+    "@chromatic-com/storybook",
+    "@storybook/addon-links",
+    "@storybook/addon-essentials", // 이 안에 Actions가 포함되어 있습니다.
+    "@storybook/addon-interactions",
   ],
   framework: {
     name: "@storybook/react-vite",

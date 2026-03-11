@@ -46,13 +46,22 @@ const StyledButton = styled.button<{
   color: ${(props) =>
     props.$primary ? props.color || "#fff" : props.color || "#000"};
   background-color: ${(props) =>
-    props.$backgroundColor || (props.$primary ? "#646cff" : "#000000")};
+    props.$backgroundColor ||
+    (props.$primary ? "var(--btn-bg-color)" : "#000000")};
 
   &:hover {
-    filter: brightness(0.9);
+    //filter: brightness(0.9);
+    background-color: ${(props) =>
+      props.$backgroundColor
+        ? props.$backgroundColor + "33" // 80% opacity
+        : props.$primary
+          ? "var(--btn-bg-color-hover)"
+          : "#000000"};
+    // opcity: 0.8;
   }
   &:active {
-    transform: scale(0.98);
+    //transform: scale(0.98);
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -61,7 +70,7 @@ export const Button = ({
   primary = false,
   size = "medium",
   backgroundColor,
-  color = "#ff5722",
+  color = "var(--btn-text-color)",
   onClick,
 }: ButtonProps) => {
   return (

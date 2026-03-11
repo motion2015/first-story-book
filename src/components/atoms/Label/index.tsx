@@ -1,13 +1,14 @@
-import { styled } from "storybook/theming";
+import styled from "@emotion/styled";
 
-const Container = styled.div`
+
+const Container =  styled.div`
   flex: 1;
   font-size: 1.2rem;
   margin-right: 16px;
 `;
 
 interface Props {
-  readonly label: string;
+  readonly text: string;
 }
 
 export const Label = ({ label }: Props) => {

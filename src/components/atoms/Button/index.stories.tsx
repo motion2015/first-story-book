@@ -33,7 +33,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     label: "삭제",
-    backgroundColor: "#606060",
+    backgroundColor: "#ea4c89",
   },
 };
 
